@@ -1,0 +1,11 @@
+C:\Users\pc\Documents\Visual Studio 2017\Projects\WorldBuilder\WorldBuilder\bin\Debug\WorldBuilder.exe.config
+C:\Users\pc\Documents\Visual Studio 2017\Projects\WorldBuilder\WorldBuilder\bin\Debug\WorldBuilder.exe
+C:\Users\pc\Documents\Visual Studio 2017\Projects\WorldBuilder\WorldBuilder\bin\Debug\WorldBuilder.pdb
+C:\Users\pc\Documents\Visual Studio 2017\Projects\WorldBuilder\WorldBuilder\bin\Debug\WorldBuilder.xml
+C:\Users\pc\Documents\Visual Studio 2017\Projects\WorldBuilder\WorldBuilder\obj\Debug\WorldBuilder.vbprojResolveAssemblyReference.cache
+C:\Users\pc\Documents\Visual Studio 2017\Projects\WorldBuilder\WorldBuilder\obj\Debug\WorldBuilder.Resources.resources
+C:\Users\pc\Documents\Visual Studio 2017\Projects\WorldBuilder\WorldBuilder\obj\Debug\WorldBuilder.vbproj.GenerateResource.Cache
+C:\Users\pc\Documents\Visual Studio 2017\Projects\WorldBuilder\WorldBuilder\obj\Debug\WorldBuilder.exe
+C:\Users\pc\Documents\Visual Studio 2017\Projects\WorldBuilder\WorldBuilder\obj\Debug\WorldBuilder.xml
+C:\Users\pc\Documents\Visual Studio 2017\Projects\WorldBuilder\WorldBuilder\obj\Debug\WorldBuilder.pdb
+C:\Users\pc\Documents\Visual Studio 2017\Projects\WorldBuilder\WorldBuilder\obj\Debug\WorldBuilder.FrmMain.resources
