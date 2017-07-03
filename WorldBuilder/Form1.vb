@@ -71,15 +71,88 @@ Public Class FrmMain
         'DECLARE VARIABLES
         Dim IntTileX As Integer
         Dim IntTileY As Integer
+        Dim Map As Map
+        Dim Seed As Long
+        Dim Width, Height As Integer
+        Dim Arctic, Tropic, Mountain, Forest, Grassland, Desert, Swamp, Rivers, Lakes As Double
+
+        'INITIALIZE VARIABLES
+        If IsNumeric(TxtSeed.Text) Then
+            Seed = CLng(TxtSeed.Text)
+        Else
+            Seed = Rnd() * 9223372036854775807
+        End If
+        If IsNumeric(NumTilesX.Text) Then
+            Width = CInt(NumTilesX.Text)
+        Else
+            Width = 32
+        End If
+        If IsNumeric(NumTilesY.Text) Then
+            Height = CInt(NumTilesY.Text)
+        Else
+            Height = 32
+        End If
+        If IsNumeric(NumArctic.Text) Then
+            Arctic = CDbl(NumArctic.Text) / 100
+        Else
+            Arctic = 0.25
+        End If
+        If IsNumeric(NumTropic.Text) Then
+            Tropic = CDbl(NumTropic.Text) / 100
+        Else
+            Tropic = 0.25
+        End If
+        If IsNumeric(NumMountain.Text) Then
+            Mountain = CDbl(NumMountain.Text) / 100
+        Else
+            Mountain = 0
+        End If
+        If IsNumeric(NumForest.Text) Then
+            Forest = CDbl(NumForest.Text) / 100
+        Else
+            Forest = 0
+        End If
+        If IsNumeric(NumGrassland.Text) Then
+            Grassland = CDbl(NumGrassland.Text) / 100
+        Else
+            Grassland = 0
+        End If
+        If IsNumeric(NumDesert.Text) Then
+            Desert = CDbl(NumDesert.Text) / 100
+        Else
+            Desert = 0
+        End If
+        If IsNumeric(NumSwamp.Text) Then
+            Swamp = CDbl(NumSwamp.Text) / 100
+        Else
+            Swamp = 0
+        End If
+        If IsNumeric(NumRivers.Text) Then
+            Rivers = CDbl(NumRivers.Text) / 100
+        Else
+            Rivers = 0
+        End If
+        If IsNumeric(NumLakes.Text) Then
+            Lakes = CDbl(NumLakes.Text) / 100
+        Else
+            Lakes = 0
+        End If
+
+        Map = New Map(Seed, Width, Height, Arctic, Tropic, Mountain, Forest, Grassland, Desert, Swamp, Rivers, Lakes)
+
+
 
         'I CREATED RANDOM TILES
         'YOUR CODE SHOLD CREATE STRUCTURES THAT CONTINENTS, OCEANS, ISLANDS, ETC
+        'For IntTileY = 0 To GblIntSizeY - 1 Step 1
+        '    For IntTileX = 0 To GblIntSizeX - 1 Step 1
+        '        GblAryIntMap(IntTileX, IntTileY) = Choose({1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11})
+        '    Next IntTileX
+        'Next IntTileY
+        Map.GenerateMap()
+        GblAryIntMap = Map.GetMap()
 
-        For IntTileY = 0 To GblIntSizeY - 1 Step 1
-            For IntTileX = 0 To GblIntSizeX - 1 Step 1
-                GblAryIntMap(IntTileX, IntTileY) = Choose({1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11})
-            Next IntTileX
-        Next IntTileY
+
     End Sub
 
     Function GenerateTextMap() As String

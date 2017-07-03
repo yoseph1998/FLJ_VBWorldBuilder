@@ -34,6 +34,11 @@
 
     End Sub
 
+    Public Sub GenerateMap()
+        GeneratePerlinMatrix()
+        CreateMapFromMatrix()
+    End Sub
+
     Public Sub CreateMapFromMatrix()
         Map = New FrmMain.TileType(Width - 1, Height - 1) {}
     End Sub

@@ -45,11 +45,13 @@ Partial Class FrmMain
         Me.BtnRandomize = New System.Windows.Forms.Button()
         Me.PicReference = New System.Windows.Forms.PictureBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.NumTropic = New System.Windows.Forms.NumericUpDown()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
+        Me.NumArctic = New System.Windows.Forms.NumericUpDown()
         Me.ChkShowText = New System.Windows.Forms.CheckBox()
         Me.PgsText = New System.Windows.Forms.ProgressBar()
+        Me.TxtSeed = New System.Windows.Forms.TextBox()
+        Me.LblSeed = New System.Windows.Forms.Label()
         CType(Me.NumTilesX, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumTilesY, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumForest, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,8 +62,8 @@ Partial Class FrmMain
         CType(Me.NumSwamp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumLakes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicReference, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumTropic, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumArctic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TxtTextView
@@ -282,13 +284,13 @@ Partial Class FrmMain
         Me.Label10.TabIndex = 27
         Me.Label10.Text = "Tropic Zone %"
         '
-        'NumericUpDown1
+        'NumTropic
         '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(860, 470)
-        Me.NumericUpDown1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(147, 31)
-        Me.NumericUpDown1.TabIndex = 26
+        Me.NumTropic.Location = New System.Drawing.Point(860, 470)
+        Me.NumTropic.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.NumTropic.Name = "NumTropic"
+        Me.NumTropic.Size = New System.Drawing.Size(147, 31)
+        Me.NumTropic.TabIndex = 26
         '
         'Label11
         '
@@ -300,13 +302,13 @@ Partial Class FrmMain
         Me.Label11.TabIndex = 25
         Me.Label11.Text = "Arctid Radius %"
         '
-        'NumericUpDown2
+        'NumArctic
         '
-        Me.NumericUpDown2.Location = New System.Drawing.Point(860, 433)
-        Me.NumericUpDown2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.NumericUpDown2.Name = "NumericUpDown2"
-        Me.NumericUpDown2.Size = New System.Drawing.Size(147, 31)
-        Me.NumericUpDown2.TabIndex = 24
+        Me.NumArctic.Location = New System.Drawing.Point(860, 433)
+        Me.NumArctic.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.NumArctic.Name = "NumArctic"
+        Me.NumArctic.Size = New System.Drawing.Size(147, 31)
+        Me.NumArctic.TabIndex = 24
         '
         'ChkShowText
         '
@@ -330,17 +332,35 @@ Partial Class FrmMain
         Me.PgsText.TabIndex = 29
         Me.PgsText.Visible = False
         '
+        'TxtSeed
+        '
+        Me.TxtSeed.Location = New System.Drawing.Point(1032, 375)
+        Me.TxtSeed.Name = "TxtSeed"
+        Me.TxtSeed.Size = New System.Drawing.Size(182, 31)
+        Me.TxtSeed.TabIndex = 30
+        '
+        'LblSeed
+        '
+        Me.LblSeed.AutoSize = True
+        Me.LblSeed.Location = New System.Drawing.Point(1032, 339)
+        Me.LblSeed.Name = "LblSeed"
+        Me.LblSeed.Size = New System.Drawing.Size(65, 23)
+        Me.LblSeed.TabIndex = 31
+        Me.LblSeed.Text = "Seed:"
+        '
         'FrmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 23.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1237, 542)
+        Me.Controls.Add(Me.LblSeed)
+        Me.Controls.Add(Me.TxtSeed)
         Me.Controls.Add(Me.PgsText)
         Me.Controls.Add(Me.ChkShowText)
         Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.NumericUpDown1)
+        Me.Controls.Add(Me.NumTropic)
         Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.NumericUpDown2)
+        Me.Controls.Add(Me.NumArctic)
         Me.Controls.Add(Me.PicReference)
         Me.Controls.Add(Me.BtnRandomize)
         Me.Controls.Add(Me.Label9)
@@ -377,8 +397,8 @@ Partial Class FrmMain
         CType(Me.NumSwamp, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumLakes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PicReference, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumTropic, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumArctic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -407,9 +427,11 @@ Partial Class FrmMain
     Friend WithEvents BtnRandomize As Button
     Friend WithEvents PicReference As PictureBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents NumTropic As NumericUpDown
     Friend WithEvents Label11 As Label
-    Friend WithEvents NumericUpDown2 As NumericUpDown
+    Friend WithEvents NumArctic As NumericUpDown
     Friend WithEvents ChkShowText As CheckBox
     Friend WithEvents PgsText As ProgressBar
+    Friend WithEvents TxtSeed As TextBox
+    Friend WithEvents LblSeed As Label
 End Class
