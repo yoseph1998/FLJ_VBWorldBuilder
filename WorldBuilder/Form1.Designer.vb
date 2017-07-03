@@ -66,19 +66,19 @@ Partial Class FrmMain
         '
         'TxtTextView
         '
-        Me.TxtTextView.Location = New System.Drawing.Point(32, 22)
+        Me.TxtTextView.Location = New System.Drawing.Point(25, 22)
         Me.TxtTextView.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.TxtTextView.MaxLength = 2147481599
         Me.TxtTextView.Multiline = True
         Me.TxtTextView.Name = "TxtTextView"
         Me.TxtTextView.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.TxtTextView.Size = New System.Drawing.Size(814, 820)
+        Me.TxtTextView.Size = New System.Drawing.Size(814, 300)
         Me.TxtTextView.TabIndex = 0
         Me.TxtTextView.WordWrap = False
         '
         'BtnGenerate
         '
-        Me.BtnGenerate.Location = New System.Drawing.Point(1039, 964)
+        Me.BtnGenerate.Location = New System.Drawing.Point(1032, 447)
         Me.BtnGenerate.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.BtnGenerate.Name = "BtnGenerate"
         Me.BtnGenerate.Size = New System.Drawing.Size(182, 70)
@@ -88,7 +88,7 @@ Partial Class FrmMain
         '
         'NumTilesX
         '
-        Me.NumTilesX.Location = New System.Drawing.Point(167, 864)
+        Me.NumTilesX.Location = New System.Drawing.Point(160, 347)
         Me.NumTilesX.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.NumTilesX.Maximum = New Decimal(New Integer() {4096, 0, 0, 0})
         Me.NumTilesX.Name = "NumTilesX"
@@ -98,7 +98,7 @@ Partial Class FrmMain
         '
         'NumTilesY
         '
-        Me.NumTilesY.Location = New System.Drawing.Point(167, 901)
+        Me.NumTilesY.Location = New System.Drawing.Point(160, 384)
         Me.NumTilesY.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.NumTilesY.Maximum = New Decimal(New Integer() {4096, 0, 0, 0})
         Me.NumTilesY.Name = "NumTilesY"
@@ -109,7 +109,7 @@ Partial Class FrmMain
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(28, 867)
+        Me.Label1.Location = New System.Drawing.Point(21, 350)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(76, 23)
@@ -119,7 +119,7 @@ Partial Class FrmMain
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(28, 904)
+        Me.Label2.Location = New System.Drawing.Point(21, 387)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(76, 23)
@@ -129,7 +129,7 @@ Partial Class FrmMain
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(337, 899)
+        Me.Label3.Location = New System.Drawing.Point(330, 382)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(98, 23)
@@ -139,7 +139,7 @@ Partial Class FrmMain
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(337, 862)
+        Me.Label4.Location = New System.Drawing.Point(330, 345)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(120, 23)
@@ -148,7 +148,7 @@ Partial Class FrmMain
         '
         'NumForest
         '
-        Me.NumForest.Location = New System.Drawing.Point(477, 896)
+        Me.NumForest.Location = New System.Drawing.Point(470, 379)
         Me.NumForest.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.NumForest.Name = "NumForest"
         Me.NumForest.Size = New System.Drawing.Size(147, 31)
@@ -156,7 +156,7 @@ Partial Class FrmMain
         '
         'NumMountain
         '
-        Me.NumMountain.Location = New System.Drawing.Point(477, 859)
+        Me.NumMountain.Location = New System.Drawing.Point(470, 342)
         Me.NumMountain.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.NumMountain.Name = "NumMountain"
         Me.NumMountain.Size = New System.Drawing.Size(147, 31)
@@ -165,7 +165,7 @@ Partial Class FrmMain
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(337, 973)
+        Me.Label5.Location = New System.Drawing.Point(330, 456)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(98, 23)
@@ -175,7 +175,7 @@ Partial Class FrmMain
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(337, 937)
+        Me.Label6.Location = New System.Drawing.Point(330, 420)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(131, 23)
@@ -184,7 +184,7 @@ Partial Class FrmMain
         '
         'NumDesert
         '
-        Me.NumDesert.Location = New System.Drawing.Point(477, 971)
+        Me.NumDesert.Location = New System.Drawing.Point(470, 454)
         Me.NumDesert.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.NumDesert.Name = "NumDesert"
         Me.NumDesert.Size = New System.Drawing.Size(147, 31)
@@ -192,7 +192,7 @@ Partial Class FrmMain
         '
         'NumGrassland
         '
-        Me.NumGrassland.Location = New System.Drawing.Point(477, 934)
+        Me.NumGrassland.Location = New System.Drawing.Point(470, 417)
         Me.NumGrassland.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.NumGrassland.Name = "NumGrassland"
         Me.NumGrassland.Size = New System.Drawing.Size(147, 31)
@@ -201,7 +201,7 @@ Partial Class FrmMain
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(664, 861)
+        Me.Label7.Location = New System.Drawing.Point(657, 344)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(76, 23)
@@ -211,7 +211,7 @@ Partial Class FrmMain
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(337, 1011)
+        Me.Label8.Location = New System.Drawing.Point(330, 494)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(87, 23)
@@ -220,7 +220,7 @@ Partial Class FrmMain
         '
         'NumRivers
         '
-        Me.NumRivers.Location = New System.Drawing.Point(867, 856)
+        Me.NumRivers.Location = New System.Drawing.Point(860, 339)
         Me.NumRivers.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.NumRivers.Name = "NumRivers"
         Me.NumRivers.Size = New System.Drawing.Size(147, 31)
@@ -228,7 +228,7 @@ Partial Class FrmMain
         '
         'NumSwamp
         '
-        Me.NumSwamp.Location = New System.Drawing.Point(477, 1009)
+        Me.NumSwamp.Location = New System.Drawing.Point(470, 492)
         Me.NumSwamp.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.NumSwamp.Name = "NumSwamp"
         Me.NumSwamp.Size = New System.Drawing.Size(147, 31)
@@ -237,7 +237,7 @@ Partial Class FrmMain
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(664, 898)
+        Me.Label9.Location = New System.Drawing.Point(657, 381)
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(65, 23)
@@ -246,7 +246,7 @@ Partial Class FrmMain
         '
         'NumLakes
         '
-        Me.NumLakes.Location = New System.Drawing.Point(867, 893)
+        Me.NumLakes.Location = New System.Drawing.Point(860, 376)
         Me.NumLakes.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.NumLakes.Name = "NumLakes"
         Me.NumLakes.Size = New System.Drawing.Size(147, 31)
@@ -254,7 +254,7 @@ Partial Class FrmMain
         '
         'BtnRandomize
         '
-        Me.BtnRandomize.Location = New System.Drawing.Point(167, 964)
+        Me.BtnRandomize.Location = New System.Drawing.Point(160, 447)
         Me.BtnRandomize.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.BtnRandomize.Name = "BtnRandomize"
         Me.BtnRandomize.Size = New System.Drawing.Size(147, 70)
@@ -265,9 +265,9 @@ Partial Class FrmMain
         'PicReference
         '
         Me.PicReference.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PicReference.Location = New System.Drawing.Point(896, 22)
+        Me.PicReference.Location = New System.Drawing.Point(867, 22)
         Me.PicReference.Name = "PicReference"
-        Me.PicReference.Size = New System.Drawing.Size(384, 384)
+        Me.PicReference.Size = New System.Drawing.Size(300, 300)
         Me.PicReference.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PicReference.TabIndex = 23
         Me.PicReference.TabStop = False
@@ -275,7 +275,7 @@ Partial Class FrmMain
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(664, 992)
+        Me.Label10.Location = New System.Drawing.Point(657, 475)
         Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(153, 23)
@@ -284,7 +284,7 @@ Partial Class FrmMain
         '
         'NumericUpDown1
         '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(867, 987)
+        Me.NumericUpDown1.Location = New System.Drawing.Point(860, 470)
         Me.NumericUpDown1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.NumericUpDown1.Name = "NumericUpDown1"
         Me.NumericUpDown1.Size = New System.Drawing.Size(147, 31)
@@ -293,7 +293,7 @@ Partial Class FrmMain
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(664, 955)
+        Me.Label11.Location = New System.Drawing.Point(657, 438)
         Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(175, 23)
@@ -302,7 +302,7 @@ Partial Class FrmMain
         '
         'NumericUpDown2
         '
-        Me.NumericUpDown2.Location = New System.Drawing.Point(867, 950)
+        Me.NumericUpDown2.Location = New System.Drawing.Point(860, 433)
         Me.NumericUpDown2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.NumericUpDown2.Name = "NumericUpDown2"
         Me.NumericUpDown2.Size = New System.Drawing.Size(147, 31)
@@ -313,7 +313,7 @@ Partial Class FrmMain
         Me.ChkShowText.AutoSize = True
         Me.ChkShowText.Checked = True
         Me.ChkShowText.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.ChkShowText.Location = New System.Drawing.Point(32, 971)
+        Me.ChkShowText.Location = New System.Drawing.Point(25, 454)
         Me.ChkShowText.Name = "ChkShowText"
         Me.ChkShowText.Size = New System.Drawing.Size(124, 27)
         Me.ChkShowText.TabIndex = 28
@@ -324,7 +324,7 @@ Partial Class FrmMain
         '
         Me.PgsText.BackColor = System.Drawing.Color.Red
         Me.PgsText.ForeColor = System.Drawing.Color.Gold
-        Me.PgsText.Location = New System.Drawing.Point(59, 405)
+        Me.PgsText.Location = New System.Drawing.Point(58, 112)
         Me.PgsText.Name = "PgsText"
         Me.PgsText.Size = New System.Drawing.Size(732, 68)
         Me.PgsText.TabIndex = 29
@@ -334,7 +334,7 @@ Partial Class FrmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 23.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1705, 1060)
+        Me.ClientSize = New System.Drawing.Size(1237, 542)
         Me.Controls.Add(Me.PgsText)
         Me.Controls.Add(Me.ChkShowText)
         Me.Controls.Add(Me.Label10)

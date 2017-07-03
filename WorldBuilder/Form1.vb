@@ -148,4 +148,5 @@ Public Class FrmMain
             GrpTemp.DrawImage(PicReference.Image, 0, 0, PicReference.Width, PicReference.Height)
         End If
     End Sub
+
 End Class
