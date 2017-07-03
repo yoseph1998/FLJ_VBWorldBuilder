@@ -1,0 +1,8 @@
+*.exe
+WorldBuilder/obj/Debug/CoreCompileInputs.cache
+*.cache
+*.cache
+*.pdb
+*.txt
+*.Cache
+*.suo
