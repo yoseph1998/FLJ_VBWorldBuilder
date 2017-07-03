@@ -9,7 +9,7 @@ Public Class FrmMain
     Dim GblColTiles(12) As Color
     Dim GblIntZoom As Integer = 12
 
-    Enum TileType As Integer
+    Public Enum TileType As Integer
         Null = 0
         Water = 1
         Ice = 2
