@@ -52,6 +52,7 @@ Partial Class FrmMain
         Me.PgsText = New System.Windows.Forms.ProgressBar()
         Me.TxtSeed = New System.Windows.Forms.TextBox()
         Me.LblSeed = New System.Windows.Forms.Label()
+        Me.BtnDebug = New System.Windows.Forms.Button()
         CType(Me.NumTilesX, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumTilesY, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumForest, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -315,7 +316,7 @@ Partial Class FrmMain
         Me.ChkShowText.AutoSize = True
         Me.ChkShowText.Checked = True
         Me.ChkShowText.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.ChkShowText.Location = New System.Drawing.Point(25, 454)
+        Me.ChkShowText.Location = New System.Drawing.Point(25, 447)
         Me.ChkShowText.Name = "ChkShowText"
         Me.ChkShowText.Size = New System.Drawing.Size(124, 27)
         Me.ChkShowText.TabIndex = 28
@@ -348,11 +349,21 @@ Partial Class FrmMain
         Me.LblSeed.TabIndex = 31
         Me.LblSeed.Text = "Seed:"
         '
+        'BtnDebug
+        '
+        Me.BtnDebug.Location = New System.Drawing.Point(22, 480)
+        Me.BtnDebug.Name = "BtnDebug"
+        Me.BtnDebug.Size = New System.Drawing.Size(131, 37)
+        Me.BtnDebug.TabIndex = 32
+        Me.BtnDebug.Text = "Debug"
+        Me.BtnDebug.UseVisualStyleBackColor = True
+        '
         'FrmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 23.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1237, 542)
+        Me.Controls.Add(Me.BtnDebug)
         Me.Controls.Add(Me.LblSeed)
         Me.Controls.Add(Me.TxtSeed)
         Me.Controls.Add(Me.PgsText)
@@ -434,4 +445,5 @@ Partial Class FrmMain
     Friend WithEvents PgsText As ProgressBar
     Friend WithEvents TxtSeed As TextBox
     Friend WithEvents LblSeed As Label
+    Friend WithEvents BtnDebug As Button
 End Class

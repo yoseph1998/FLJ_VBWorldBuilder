@@ -41,10 +41,16 @@
 
     Public Sub CreateMapFromMatrix()
         Map = New FrmMain.TileType(Width - 1, Height - 1) {}
+        For x = 0 To Width - 1
+            For y = 0 To Height - 1
+                Map(x, y) = MapMatrix(x, y) * 11
+            Next
+        Next
     End Sub
 
     Public Sub GeneratePerlinMatrix()
-        MapMatrix = New Double(Width - 1, Height - 1) {}
+        Dim pGen = New PerlinGenerator(Seed, Width, Height, 0, 1, 8, 4)
+        MapMatrix = pGen.GenerateMatrix()
     End Sub
 
     '---SETTER METHODS---'

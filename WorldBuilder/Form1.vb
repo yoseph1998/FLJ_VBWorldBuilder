@@ -4,6 +4,8 @@ Imports System.Text
 Public Class FrmMain
 
     Dim GblAryIntMap(0, 0) As TileType
+    Dim GblMatrix As Double(,)
+
     Dim GblIntSizeX As Integer = 0
     Dim GblIntSizeY As Integer = 0
     Dim GblColTiles(12) As Color
@@ -49,8 +51,11 @@ Public Class FrmMain
         CreateTileMap() '<--- Do your work here
 
         'THIS SHOWS THE RESILTS 
-        TxtTextView.Text = GenerateTextMap()
-        PicReference.Image = GeneratePixelMap()
+        'TxtTextView.Text = GenerateTextMap()
+        'PicReference.Image = GeneratePixelMap()
+        TxtTextView.Text = GenerateTextMatrix()
+        PicReference.Image = GeneratePixelMatrix()
+
     End Sub
 
     Private Function GeneratePixelMap() As Bitmap
@@ -61,6 +66,20 @@ Public Class FrmMain
             For IntTileX = 0 To GblIntSizeX - 1 Step 1
                 IntColorIndex = GblAryIntMap(IntTileX, IntTileY)
                 BmpReturn.SetPixel(IntTileX, IntTileY, GblColTiles(IntColorIndex))
+            Next IntTileX
+        Next IntTileY
+
+        Return BmpReturn
+    End Function
+
+    Private Function GeneratePixelMatrix() As Bitmap
+        Dim BmpReturn As New Bitmap(GblIntSizeX, GblIntSizeY)
+        Dim color As Integer
+        '
+        For IntTileY = 0 To GblIntSizeY - 1 Step 1
+            For IntTileX = 0 To GblIntSizeX - 1 Step 1
+                color = GblMatrix(IntTileX, IntTileY) * 255
+                BmpReturn.SetPixel(IntTileX, IntTileY, New Color().FromArgb(color, color, color))
             Next IntTileX
         Next IntTileY
 
@@ -151,7 +170,7 @@ Public Class FrmMain
         'Next IntTileY
         Map.GenerateMap()
         GblAryIntMap = Map.GetMap()
-
+        GblMatrix = Map.GetMapMatrix()
 
     End Sub
 
@@ -175,6 +194,37 @@ Public Class FrmMain
             For IntTileX = 0 To GblIntSizeX - 1 Step 1
                 IntTileType = GblAryIntMap(IntTileX, IntTileY)
                 StrTileType = IntTileType.ToString.PadLeft(2, "0") + " "
+                StrReturn.Append(StrTileType)
+                PgsText.Value += 1
+            Next IntTileX
+            StrReturn.Append(vbNewLine)
+            Me.Invalidate()
+        Next IntTileY
+
+        PgsText.Visible = False
+        Return StrReturn.ToString
+    End Function
+
+    Function GenerateTextMatrix() As String
+        'DECLARE VARIABLES
+        Dim IntTileX As Integer
+        Dim IntTileY As Integer
+        Dim StrReturn As New StringBuilder
+        Dim IntTileType As Double
+        Dim StrTileType As String
+
+
+
+        PgsText.Value = 0
+        PgsText.Visible = True
+        PgsText.Maximum = (GblIntSizeX) * (GblIntSizeY)
+
+
+        'LOOP THROUGH ARRAY AND WRITE EACH INDEX TO STRING
+        For IntTileY = 0 To GblIntSizeY - 1 Step 1
+            For IntTileX = 0 To GblIntSizeX - 1 Step 1
+                IntTileType = GblMatrix(IntTileX, IntTileY)
+                StrTileType = IntTileType.ToString.PadLeft(3, "0") + " "
                 StrReturn.Append(StrTileType)
                 PgsText.Value += 1
             Next IntTileX
@@ -222,4 +272,10 @@ Public Class FrmMain
         End If
     End Sub
 
+    Private Sub BtnDebug_Click(sender As Object, e As EventArgs) Handles BtnDebug.Click
+        Dim m = New Map(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+        m.CreateMapFromMatrix()
+        'Dim g = New PerlinGenerator(0, 32, 32, 0, 1, 1, 2)
+        'g.GenerateMatrix()
+    End Sub
 End Class
