@@ -97,7 +97,7 @@ Partial Class FrmMain
         Me.NumTilesX.Name = "NumTilesX"
         Me.NumTilesX.Size = New System.Drawing.Size(147, 31)
         Me.NumTilesX.TabIndex = 2
-        Me.NumTilesX.Value = New Decimal(New Integer() {32, 0, 0, 0})
+        Me.NumTilesX.Value = New Decimal(New Integer() {128, 0, 0, 0})
         '
         'NumTilesY
         '
@@ -107,7 +107,7 @@ Partial Class FrmMain
         Me.NumTilesY.Name = "NumTilesY"
         Me.NumTilesY.Size = New System.Drawing.Size(147, 31)
         Me.NumTilesY.TabIndex = 3
-        Me.NumTilesY.Value = New Decimal(New Integer() {32, 0, 0, 0})
+        Me.NumTilesY.Value = New Decimal(New Integer() {128, 0, 0, 0})
         '
         'Label1
         '

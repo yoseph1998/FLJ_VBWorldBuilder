@@ -26,10 +26,10 @@
         End If
         'Makes sure that square count is a power of two, i.e. equal vertical squares as horizontal squares
         If Math.Sqrt(InitSquareCount) Mod 1 <> 0 Then
-            InitSquareCount = Math.Pow(Math.Ceiling(Math.Sqrt(InitSquareCount)), 2)
+            InitSquareCount = Math.Pow(Math.Floor(Math.Sqrt(InitSquareCount)), 2)
         End If
         'Makes sure that square count resolution never exceeds map size resulotion
-        If Math.Max(Width, Height) / Math.Sqrt(InitSquareCount) * Math.Pow(2, Layers - 1) < 4 Then
+        If Math.Sqrt(InitSquareCount) * Math.Pow(2, Layers - 1) > Math.Max(Width, Height) Then
             Throw New System.ArgumentException("Width/Height is not big enough to support given SquareCount and Depth. For the Deepest Depth there must be at minimum 4 tiles per square.\nEither make width/height larger, StartingSquareCount smaller, reduce # layers")
         End If
 
@@ -144,34 +144,80 @@
                         Matrices(layer)(PosX, PosY) = Value
                     End If
 
-
                 Next
             Next
         Next
 
-        'Squares = InitSquaresPerSide * Math.Pow(2, Layers - 1)
-        'TileWidth = Math.Floor((Length) / (Squares))
-        'For x = 0 To Length - 1
-        '    For y = 0 To Length - 1
-        '        'DECLERATIONS
-        '        Dim PosX
-        '        Dim PosY
-        '        Dim RelX As Double, RelY As Double
-        '        Dim Value As Double
-        '        Dim A, B, C, D
+        Squares = InitSquaresPerSide * Math.Pow(2, Layers - 1)
+        TileWidth = Math.Floor((Length) / (Squares))
+        For x = 0 To Length - 1
+            For y = 0 To Length - 1
+                'DECLERATIONS
+                Dim PosX
+                Dim PosY
+                Dim RelX As Double, RelY As Double
+                Dim Value As Double
+                Dim A, B, C, D, AB, CD
+                Dim Ax, Ay, nextAx, nextAy
 
-        '        'INITIALIZATIONS
-        '        PosX = x / TileWidth
-        '        PosY = y / TileWidth
-        '        RelX = CDbl(x - PosX) / CDbl(TileWidth)
-        '        RelY = CDbl(y - PosY) / CDbl(TileWidth)
+                'INITIALIZATIONS
+                PosX = x / TileWidth
+                PosY = y / TileWidth
+                Ax = Math.Floor(PosX) * TileWidth
+                Ay = Math.Floor(PosY) * TileWidth
+                nextAy = Ay + TileWidth
+                nextAx = Ax + TileWidth
 
-        '        If (Matrices(Layers - 1)(PosX, PosY) = 0) Then
-        '            Value = Value
-        '        End If
+                If x = Length - 1 Then
+                    Ax = PosX * TileWidth
+                End If
+                If y = Length - 1 Then
+                    Ay = PosY * TileWidth
+                End If
+                If nextAx >= Length Then
+                    nextAx = Length - 1
+                End If
+                If nextAy >= Length Then
+                    nextAy = Length - 1
+                End If
 
-        '    Next
-        'Next
+
+                RelX = CDbl(x - Ax) / CDbl(TileWidth)
+                RelY = CDbl(y - Ay) / CDbl(TileWidth)
+
+
+                'SKIP TO NEXT ITERATION IF TILE ALREADY FILLED
+                If (Matrices(Layers - 1)(x, y) <> 0) Then
+                    Continue For
+                End If
+
+                'Interpolate Tile from vertical filled tiles (from the top / bottom)
+                If Ax = x Then
+
+                    A = Matrices(Layers - 1)(Ax, Ay)
+                    C = Matrices(Layers - 1)(Ax, nextAy)
+                    Value = A + RelY * (C - A)
+                    Matrices(Layers - 1)(x, y) = Value
+                ElseIf Ay = y Then 'Interpolate Tile from horizontal parents (from the right / left)
+                    A = Matrices(Layers - 1)(Ax, Ay)
+                    B = Matrices(Layers - 1)(nextAx, Ay)
+                    Value = A + RelX * (B - A)
+                    Matrices(Layers - 1)(x, y) = Value
+                Else
+                    A = Matrices(Layers - 1)(Ax, Ay)
+                    B = Matrices(Layers - 1)(nextAx, Ay)
+                    C = Matrices(Layers - 1)(Ax, nextAy)
+                    D = Matrices(Layers - 1)(nextAx, nextAy)
+                    AB = A + RelX * (B - A)
+                    CD = C + RelX * (D - C)
+                    Value = AB + RelY * (CD - AB)
+                    Matrices(Layers - 1)(x, y) = Value
+                End If
+
+
+
+            Next
+        Next
         Return Matrices(Layers - 1)
     End Function
 
