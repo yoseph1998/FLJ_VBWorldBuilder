@@ -1,12 +1,13 @@
 ﻿Public Class PerlinGenerator
-    Private Seed As Long
+    Private Seed As Integer
     Private Width As Integer, Height As Integer
     Private Min As Double, Max As Double
     Private InitSquareCount As Integer, Layers As Integer
+    Private rnd As Random
 
     Private PerlinMatrix As Double(,)
 
-    Public Sub New(Seed As Long, Width As Integer, Height As Integer, Min As Double, Max As Double, InitSquareCount As Integer, Layers As Integer)
+    Public Sub New(Seed As Integer, Width As Integer, Height As Integer, Min As Double, Max As Double, InitSquareCount As Integer, Layers As Integer)
         'CHECK FOR INVALID PARAMETER INPUTS
         If Width < 16 Or Height < 16 Then
             Throw New System.ArgumentException("Both Width and Height values must be greater than 16")
@@ -37,6 +38,8 @@
         Me.InitSquareCount = InitSquareCount
         Me.Layers = Layers
 
+        rnd = New Random(CInt(Seed))
+
         PerlinMatrix = New Double(Width - 1, Height - 1) {}
     End Sub
 
@@ -63,11 +66,11 @@
         'FILL VECTOR GRIDS
         For x = 0 To FinalSquaresPerSide - 1
             For y = 0 To FinalSquaresPerSide - 1
-                Dim index = CInt(Rnd() * (VectorsTable.GetLength(0) - 1))
+                Dim index = CInt(rnd.NextDouble() * (VectorsTable.GetLength(0) - 1))
                 Dim val = VectorsTable(index)
                 VectorsGrid(x, y) = val 'Use Vector Table
-                'VectorsGrid(x, y) = New Vector(Rnd() * 2 - 1, Rnd() * 2 - 1) 'Use Random Vectors
-                RandMatrix(x, y) = Rnd()
+                'VectorsGrid(x, y) = New Vector(rnd.NextDouble() * 2 - 1, rnd.NextDouble() * 2 - 1) 'Use Random Vectors
+                RandMatrix(x, y) = rnd.NextDouble()
             Next
         Next
 

@@ -9,3 +9,14 @@ C:\Users\pc\Documents\Visual Studio 2017\Projects\WorldBuilder\WorldBuilder\obj\
 C:\Users\pc\Documents\Visual Studio 2017\Projects\WorldBuilder\WorldBuilder\obj\Debug\WorldBuilder.xml
 C:\Users\pc\Documents\Visual Studio 2017\Projects\WorldBuilder\WorldBuilder\obj\Debug\WorldBuilder.pdb
 C:\Users\pc\Documents\Visual Studio 2017\Projects\WorldBuilder\WorldBuilder\obj\Debug\WorldBuilder.FrmMain.resources
+C:\Users\yosephsa\Documents\GitHub\FLJ_VBWorldBuilder\WorldBuilder\bin\Debug\WorldBuilder.exe.config
+C:\Users\yosephsa\Documents\GitHub\FLJ_VBWorldBuilder\WorldBuilder\bin\Debug\WorldBuilder.exe
+C:\Users\yosephsa\Documents\GitHub\FLJ_VBWorldBuilder\WorldBuilder\bin\Debug\WorldBuilder.pdb
+C:\Users\yosephsa\Documents\GitHub\FLJ_VBWorldBuilder\WorldBuilder\bin\Debug\WorldBuilder.xml
+C:\Users\yosephsa\Documents\GitHub\FLJ_VBWorldBuilder\WorldBuilder\obj\Debug\WorldBuilder.vbprojResolveAssemblyReference.cache
+C:\Users\yosephsa\Documents\GitHub\FLJ_VBWorldBuilder\WorldBuilder\obj\Debug\WorldBuilder.FrmMain.resources
+C:\Users\yosephsa\Documents\GitHub\FLJ_VBWorldBuilder\WorldBuilder\obj\Debug\WorldBuilder.Resources.resources
+C:\Users\yosephsa\Documents\GitHub\FLJ_VBWorldBuilder\WorldBuilder\obj\Debug\WorldBuilder.vbproj.GenerateResource.Cache
+C:\Users\yosephsa\Documents\GitHub\FLJ_VBWorldBuilder\WorldBuilder\obj\Debug\WorldBuilder.exe
+C:\Users\yosephsa\Documents\GitHub\FLJ_VBWorldBuilder\WorldBuilder\obj\Debug\WorldBuilder.xml
+C:\Users\yosephsa\Documents\GitHub\FLJ_VBWorldBuilder\WorldBuilder\obj\Debug\WorldBuilder.pdb

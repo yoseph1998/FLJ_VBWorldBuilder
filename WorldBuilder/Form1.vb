@@ -91,7 +91,7 @@ Public Class FrmMain
         Dim IntTileX As Integer
         Dim IntTileY As Integer
         Dim Map As Map
-        Dim Seed As Long
+        Dim Seed As Integer
         Dim Width, Height As Integer
         Dim Arctic, Tropic, Mountain, Forest, Grassland, Desert, Swamp, Rivers, Lakes As Double
 
@@ -99,7 +99,7 @@ Public Class FrmMain
         If IsNumeric(TxtSeed.Text) Then
             Seed = CLng(TxtSeed.Text)
         Else
-            Seed = Rnd() * 9223372036854775807
+            Seed = Rnd() * 2147483647
         End If
         If IsNumeric(NumTilesX.Text) Then
             Width = CInt(NumTilesX.Text)
@@ -224,7 +224,7 @@ Public Class FrmMain
         For IntTileY = 0 To GblIntSizeY - 1 Step 1
             For IntTileX = 0 To GblIntSizeX - 1 Step 1
                 IntTileType = GblMatrix(IntTileX, IntTileY)
-                StrTileType = IntTileType.ToString.PadLeft(3, "0") + " "
+                StrTileType = Format(IntTileType, "0.00") + " "
                 StrReturn.Append(StrTileType)
                 PgsText.Value += 1
             Next IntTileX

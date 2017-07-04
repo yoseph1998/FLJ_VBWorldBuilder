@@ -1,5 +1,5 @@
 ﻿Public Class Map
-    Private Seed As Long
+    Private Seed As Integer
     Private Width As Integer = 1024
     Private Height As Integer = 1024
 
@@ -16,7 +16,7 @@
     Private MapMatrix As Double(,)
     Private Map As FrmMain.TileType(,)
 
-    Public Sub New(sd As Long, wt As Integer, ht As Integer, ar As Double, tz As Double, mf As Double, ff As Double, glf As Double, df As Double, sf As Double, rf As Double, lf As Double)
+    Public Sub New(sd As Integer, wt As Integer, ht As Integer, ar As Double, tz As Double, mf As Double, ff As Double, glf As Double, df As Double, sf As Double, rf As Double, lf As Double)
         SetSeed(sd)
         SetWidth(wt)
         SetHeight(ht)
@@ -35,7 +35,8 @@
     End Sub
 
     Public Sub GenerateMap()
-        GeneratePerlinMatrix()
+        GenerateCustomMatrix()
+        'GeneratePerlinMatrix()
         CreateMapFromMatrix()
     End Sub
 
@@ -49,12 +50,17 @@
     End Sub
 
     Public Sub GeneratePerlinMatrix()
-        Dim pGen = New PerlinGenerator(Seed, Width, Height, 0, 1, 8, 4)
+        Dim pGen = New PerlinGenerator(Seed, Width, Height, 0, 1, 16, 4)
         MapMatrix = pGen.GenerateMatrix()
     End Sub
 
+    Public Sub GenerateCustomMatrix()
+        Dim cGen = New CustomGenerator(Seed, Width, Height, 0, 1, 16, 4)
+        MapMatrix = cGen.GenerateMatrix()
+    End Sub
+
     '---SETTER METHODS---'
-    Public Sub SetSeed(value As Long)
+    Public Sub SetSeed(value As Integer)
         Seed = value
     End Sub
 
@@ -125,7 +131,7 @@
     End Sub
 
     '---GETTER METHODS---'
-    Public ReadOnly Property GetSeed() As Long
+    Public ReadOnly Property GetSeed() As Integer
         Get
             Return Seed
         End Get
