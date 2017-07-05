@@ -69,9 +69,9 @@
 
             'INITIALIZATIONS
             Squares = InitSquaresPerSide * Math.Pow(2, layer)
-            TileWidth = Math.Floor((Length) / (Squares))
+            TileWidth = ((Length) / (Squares))
             oldSquares = InitSquaresPerSide * Math.Pow(2, layer - 1)
-            oldTileWidth = Math.Floor((Length) / (oldSquares))
+            oldTileWidth = ((Length) / (oldSquares))
             Matrices(layer) = New Double(Length - 1, Length - 1) {}
 
             For x = 0 To Squares
@@ -149,7 +149,7 @@
         Next
 
         Squares = InitSquaresPerSide * Math.Pow(2, Layers - 1)
-        TileWidth = Math.Floor((Length) / (Squares))
+        TileWidth = ((Length) / (Squares))
         For x = 0 To Length - 1
             For y = 0 To Length - 1
                 'DECLERATIONS
