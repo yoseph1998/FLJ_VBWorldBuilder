@@ -133,7 +133,7 @@
                         Value = A + (1 - RelX) * (B - A)
                         Value = Value + ((B - A) / 2 * (rnd.NextDouble() * 2 - 1))
                         Matrices(layer)(PosX, PosY) = Value
-                    ElseIf Math.Floor(oldPosX) <> PosX And Math.Floor(OldPosY) <> PosY Then
+                    ElseIf Math.Floor(oldPosX) <> PosX And Math.Floor(oldPosY) <> PosY Then
                         A = Matrices(layer - 1)(oldPosX, (oldPosY))
                         B = Matrices(layer - 1)(Math.Min(oldPosX + oldTileWidth, Length - 1), oldPosY)
                         C = Matrices(layer - 1)(oldPosX, Math.Min(oldPosY + oldTileWidth, Length - 1))
