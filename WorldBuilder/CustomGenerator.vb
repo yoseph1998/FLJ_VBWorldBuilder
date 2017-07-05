@@ -12,9 +12,6 @@
         If Width < 32 Or Height < 32 Then
             Throw New System.ArgumentException("Both Width and Height values must be greater than 16")
         End If
-        If Width <> Height Or Math.Log(Width, 2) <> Math.Floor(Math.Log(Width, 2)) Then
-            Throw New System.ArgumentException("Both Width and Height must be a power of 2 and equal to each other")
-        End If
         If Max <= Min Then
             Throw New System.ArgumentException("Max cannot be less than or qual to Min")
         End If
@@ -56,6 +53,8 @@
 
         'INITIALIZE VARIABLES
         Length = Math.Max(Width, Height)
+        Length = Math.Pow(2, Math.Ceiling(Math.Log(Length, 2)))
+        Console.Write(Length & " ")
         InitSquaresPerSide = Math.Sqrt(InitSquareCount)
         FinalSquaresPerSide = InitSquaresPerSide * Math.Pow(2, Layers - 1)
         Matrices = New Double(Layers - 1)(,) {}
@@ -119,6 +118,9 @@
                     If oldPosX = PosX And oldPosY = PosY Then
                         Value = Matrices(layer - 1)(oldPosX, oldPosY)
                         Matrices(layer)(oldPosX, oldPosY) = Value
+                        If x < Width And y < Height Then
+                            Matrix(PosX, PosY) = Value
+                        End If
                         Continue For
                     End If
                     If Math.Floor(oldPosX) = PosX Then
@@ -143,7 +145,9 @@
                         Value = AB + (1 - RelY) * (CD - AB)
                         Matrices(layer)(PosX, PosY) = Value
                     End If
-
+                    If x < Width And y < Height Then
+                        Matrix(PosX, PosY) = Value
+                    End If
                 Next
             Next
         Next
@@ -214,11 +218,12 @@
                     Matrices(Layers - 1)(x, y) = Value
                 End If
 
-
-
+                If x < Width And y < Height Then
+                    Matrix(x, y) = Value
+                End If
             Next
         Next
-        Return Matrices(Layers - 1)
+        Return Matrix
     End Function
 
     Public ReadOnly Property GetMatrix() As Double(,)
